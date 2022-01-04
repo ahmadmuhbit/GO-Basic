@@ -57,3 +57,57 @@ Contoh
 Contoh ini melewatkan nilai 3:
 
 (for2.go)
+
+------------------------------------------------------------------------
+
+The break Statement
+
+Pernyataan break digunakan untuk memutus/mengakhiri eksekusi loop.
+
+Contoh
+Contoh ini keluar dari loop ketika i sama dengan 3:
+
+(for3.go)
+
+Contoh
+Catatan: continue dan break biasanya digunakan dengan kondisi.
+
+------------------------------------------------------------------------
+
+Nested Loops / Loop Bersarang
+
+Dimungkinkan untuk menempatkan loop di dalam loop lain.
+Di sini, "inner loop/loop dalam" akan dieksekusi satu kali untuk setiap iterasi dari "outer loop/loop luar":
+
+Contoh (for4.go)
+
+------------------------------------------------------------------------
+
+The Range Keyword / Kata Kunci Range
+
+Kata kunci range digunakan untuk lebih mudah melakukan iterasi pada array, slice, atau map. Ini mengembalikan indeks dan nilai.
+
+Kata kunci range digunakan seperti ini:
+
+Syntax
+
+for index, value := array|slice|map {
+   // code to be executed for each iteration
+}
+
+Contoh
+Contoh ini menggunakan range untuk beralih pada array dan mencetak indeks dan nilai di masing-masing (idx menyimpan indeks, val menyimpan nilai):
+
+(for6.go)
+
+Tip: Untuk hanya menampilkan nilai atau indeks, Anda dapat menghilangkan output lainnya menggunakan garis bawah (_).
+
+Contoh
+Di sini, kami ingin menghilangkan indeks (idx menyimpan indeks, val menyimpan nilainya):
+
+(for7.go)
+
+Contoh
+Di sini, kami ingin menghilangkan nilai (idx menyimpan indeks, val menyimpan nilai):
+
+(for8.go)

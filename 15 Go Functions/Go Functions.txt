@@ -1,0 +1,182 @@
+Go Functions
+
+Fungsi adalah blok pernyataan yang dapat digunakan berulang kali dalam suatu program.
+Sebuah fungsi tidak akan dijalankan secara otomatis saat halaman dimuat.
+Sebuah fungsi akan dieksekusi dengan memanggil fungsi tersebut.
+
+------------------------------------------------------------------------------------
+
+Buat Fungsi
+
+Untuk membuat (sering disebut sebagai mendeklarasikan) suatu fungsi, lakukan hal berikut:
+    - Gunakan kata kunci func.
+    - Tentukan nama untuk fungsi, diikuti dengan tanda kurung ().
+    - Terakhir, tambahkan kode yang mendefinisikan fungsi yang harus dilakukan, di dalam kurung kurawal {}.
+
+Syntax
+
+func FunctionName() {
+  // code to be executed
+}
+
+------------------------------------------------------------------------------------
+
+Call a Function / Panggil Fungsi
+
+Fungsi tidak segera dieksekusi. Mereka "disimpan untuk digunakan nanti", dan akan dieksekusi saat dipanggil.
+
+Pada contoh di bawah ini, kita membuat sebuah fungsi bernama "myMessage()". Kurung kurawal pembuka ( { ) menunjukkan awal kode fungsi, dan kurung kurawal penutup ( } ) menunjukkan akhir fungsi. Fungsi tersebut menghasilkan "I just got executed!". Untuk memanggil fungsi, cukup tulis namanya diikuti oleh dua tanda kurung ():
+
+(func1.go)
+
+Suatu fungsi dapat dipanggil beberapa kali.
+
+Contoh(func11.go)
+
+------------------------------------------------------------------------------------
+
+Aturan Penamaan untuk Fungsi Go
+
+    - Nama fungsi harus dimulai dengan huruf
+    - Nama fungsi hanya boleh berisi karakter alfanumerik dan garis bawah (A-z, 0-9, dan _ )
+    - Nama fungsi peka huruf besar-kecil (case-sensitive)
+    - Nama fungsi tidak boleh mengandung spasi
+    - Jika nama fungsi terdiri dari beberapa kata, teknik yang diperkenalkan untuk penamaan variabel multi-kata dapat digunakan
+
+Tip: Beri nama fungsi yang mencerminkan fungsi tersebut!
+
+------------------------------------------------------------------------------------
+
+Go Function Parameters and Arguments
+
+Parameter dan Argumen
+
+Informasi dapat diteruskan ke fungsi sebagai parameter. Parameter bertindak sebagai variabel di dalam fungsi.
+Parameter dan tipenya ditentukan setelah nama fungsi, di dalam tanda kurung. Anda dapat menambahkan parameter sebanyak yang Anda inginkan, cukup pisahkan dengan koma:
+
+Syntax
+
+func FunctionName(param1 type, param2 type, param3 type) {
+  // code to be executed
+}
+
+------------------------------------------------------------------------------------
+
+Fungsi Dengan Parameter Contoh
+
+Contoh berikut memiliki fungsi dengan satu parameter (fname) bertipe string. Saat fungsi familyName() dipanggil, kami juga meneruskan nama (misalnya Liam), dan nama tersebut digunakan di dalam fungsi, yang menampilkan beberapa nama depan yang berbeda, tetapi nama belakang yang sama:
+
+(func2.go)
+
+Catatan: Ketika parameter diteruskan ke fungsi, itu disebut argumen. Jadi, dari contoh di atas: fname adalah parameter, sedangkan Liam, Jenny dan Anja adalah argumen.
+
+------------------------------------------------------------------------------------
+
+Multiple Parameters/ Beberapa Parameter
+
+Di dalam fungsi, Anda dapat menambahkan parameter sebanyak yang Anda inginkan:
+
+Contoh : (func3.go)
+
+Catatan: Saat Anda bekerja dengan beberapa parameter, pemanggilan fungsi harus memiliki jumlah argumen yang sama dengan parameter yang ada, dan argumen harus diteruskan dalam urutan yang sama.
+
+------------------------------------------------------------------------------------
+
+Go Function Returns / Pengembalian Fungsi Go
+
+Return Values / Mengembalikan Nilai
+
+Jika Anda ingin fungsi mengembalikan nilai, Anda perlu menentukan tipe data dari nilai yang dikembalikan (seperti int, string, dll), dan juga menggunakan kata kunci return di dalam fungsi:
+
+Syntax
+
+func FunctionName(param1 type, param2 type) type {
+  // code to be executed
+  return output
+}
+
+------------------------------------------------------------------------------------
+
+Contoh Function Return
+
+Contoh
+Di sini, myFunction() menerima dua bilangan bulat / two integers (x dan y) dan mengembalikan penjumlahannya (x + y) sebagai bilangan bulat / integer (int):
+
+(func4.go)
+
+------------------------------------------------------------------------------------
+
+Named Return Values
+
+Di Go, Anda dapat memberi nama nilai kembalian suatu fungsi.
+
+Contoh
+Di sini, kami menamai nilai pengembalian sebagai result (dari tipe int), dan mengembalikan nilai dengan pengembalian telanjang (berarti bahwa kami menggunakan pernyataan return tanpa menentukan nama variabel):
+
+(func5.go)
+
+Contoh di atas juga dapat ditulis seperti ini. Di sini, pernyataan return menentukan nama variabel:
+
+(func5_2.go)
+
+------------------------------------------------------------------------------------
+
+Store the Return Value in a Variable / Simpan Nilai Pengembalian dalam Variabel
+
+Anda juga dapat menyimpan nilai kembalian dalam variabel, seperti ini:
+
+Contoh
+Di sini, kami menyimpan nilai kembalian dalam variabel yang disebut total:
+
+(func6.go)
+
+------------------------------------------------------------------------------------
+
+Multiple Return Values/ Beberapa Nilai Pengembalian
+
+Fungsi Go juga dapat mengembalikan beberapa nilai.
+
+Contoh
+Di sini, myFunction() mengembalikan satu integer (result) dan satu string (txt1):
+
+(func7.go)
+
+
+Contoh
+Di sini, kami menyimpan dua nilai kembalian ke dalam dua variabel (a dan b):
+
+(func8.go)
+
+Jika kami (karena alasan tertentu) tidak ingin menggunakan beberapa nilai yang dikembalikan, kami dapat menambahkan garis bawah (_), untuk menghilangkan nilai ini.
+
+Contoh
+Di sini, kami ingin menghilangkan nilai yang dikembalikan pertama (result - yang disimpan dalam variabel a):
+
+(func9.go)
+
+Contoh
+Di sini, kami ingin menghilangkan nilai kedua yang dikembalikan (txt1 - yang disimpan dalam variabel b):
+
+(func13.go)
+
+------------------------------------------------------------------------------------
+
+Go Recursion Functions / Go Fungsi Rekursi
+
+Fungsi Rekursi
+
+Go menerima fungsi rekursi. Suatu fungsi dikatakan rekursif jika ia memanggil dirinya sendiri dan mencapai kondisi berhenti.
+
+Dalam contoh berikut, testcount() adalah fungsi yang memanggil dirinya sendiri. Kami menggunakan variabel x sebagai data, yang bertambah dengan 1 (x + 1) setiap kali kami berulang. Rekursi berakhir ketika variabel x sama dengan 11 (x == 11).
+
+(func10_1.go)
+
+Rekursi adalah konsep matematika dan pemrograman yang umum. Ini memiliki manfaat yang berarti bahwa Anda dapat mengulang data untuk mencapai hasil.
+
+Pengembang harus berhati-hati dengan fungsi rekursi karena dapat dengan mudah tergelincir ke dalam penulisan fungsi yang tidak pernah berhenti, atau fungsi yang menggunakan jumlah memori atau daya prosesor yang berlebihan. Namun, ketika ditulis dengan benar, rekursi bisa menjadi pendekatan pemrograman yang sangat efisien dan elegan secara matematis.
+
+Dalam contoh berikut, factorial_recursion() adalah fungsi yang memanggil dirinya sendiri. Kami menggunakan variabel x sebagai data, yang mengurangi (-1) setiap kali kami berulang. Rekursi berakhir ketika kondisinya tidak lebih besar dari 0 (yaitu ketika 0).
+
+Contoh : (func10.go)
+
+Bagi pengembang baru, perlu beberapa waktu untuk mengetahui cara kerjanya, cara terbaik untuk mengetahuinya adalah dengan menguji dan memodifikasinya.
