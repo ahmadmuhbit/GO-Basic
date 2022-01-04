@@ -1,0 +1,159 @@
+Create Slice
+
+----------------------------------------------------------------------------------------
+
+Go Slices
+
+Slice mirip dengan array, tetapi lebih kuat dan fleksibel.
+Seperti array, slices juga digunakan untuk menyimpan beberapa nilai dengan tipe yang sama dalam satu variabel.
+Namun, tidak seperti array, panjang slice dapat bertambah dan menyusut sesuai keinginan Anda.
+
+Di Go, ada beberapa cara untuk membuat slice:
+    - Menggunakan format []datatype{values}
+    - Buat slice dari array
+    - Menggunakan fungsi make()
+
+----------------------------------------------------------------------------------------
+
+Buat Slice Dengan []datatype{values}
+
+Syntax
+slice_name := []datatype{values}
+
+Cara umum untuk mendeklarasikan sebuah slice adalah seperti ini:
+
+myslice := []int
+
+Kode di atas mendeklarasikan slice kosong dengan panjang 0 dan kapasitas 0.
+Untuk menginisialisasi slice selama deklarasi, gunakan ini:
+
+myslice := []int{1,2,3}
+
+Kode di atas mendeklarasikan slice dari integers dengan panjang 3 dan juga kapasitas 3.
+
+Di Go, ada dua fungsi yang dapat digunakan untuk mengembalikan panjang dan kapasitas sebuah slice:
+    - fungsi len() - mengembalikan panjang slice (jumlah elemen dalam slice)
+    - cap() function - mengembalikan kapasitas slice (jumlah elemen yang dapat ditambah atau diciutkan oleh slice)
+
+Contoh
+Contoh ini menunjukkan cara membuat slice menggunakan format []datatype{values}:
+
+(slices1.go)
+
+Pada contoh di atas, kita melihat bahwa pada slice pertama (myslice1), elemen sebenarnya tidak ditentukan, sehingga panjang dan kapasitas slice akan menjadi nol. Pada slice kedua (myslice2), elemen ditentukan, dan panjang dan kapasitasnya sama dengan jumlah elemen aktual yang ditentukan.
+
+----------------------------------------------------------------------------------------
+
+Buat Slice Dari Array
+
+Anda dapat membuat slice dengan mengiris array:
+
+Syntax
+var myarray = [length]datatype{values} // An array
+myslice := myarray[start:end] // A slice made from the array
+
+Contoh
+Contoh ini menunjukkan cara membuat slice dari array:
+
+(slices2.go)
+
+Pada contoh di atas myslice adalah sebuah slice dengan panjang 2. Dibuat dari arr1 yang merupakan array dengan panjang 6.
+
+Slice dimulai dari elemen kedua array yang bernilai 12. Slice dapat tumbuh hingga akhir array. Ini berarti kapasitas slice adalah 4.
+
+Jika myslice dimulai dari elemen 0, kapasitas slice akan menjadi 6.
+
+----------------------------------------------------------------------------------------
+
+Buat Slice Dengan Fungsi make()
+Fungsi make() juga dapat digunakan untuk membuat slice.
+
+Syntax
+slice_name := make([]type, length, capacity)
+
+Catatan: Jika parameter kapasitas tidak ditentukan, itu akan sama dengan panjang.
+
+Contoh
+Contoh ini menunjukkan cara membuat slice menggunakan fungsi make():
+
+(slices3.go)
+
+----------------------------------------------------------------------------------------
+
+Modify Slice
+
+----------------------------------------------------------------------------------------
+
+Go Access, Change, Append and Copy Slices / Buka Akses, Ubah, Tambahkan, dan Salin Slice
+
+----------------------------------------------------------------------------------------
+
+Akses Elemen dari Slice
+
+Anda dapat mengakses elemen slice tertentu dengan mengacu pada nomor indeks.
+Di Go, indeks dimulai dari 0. Artinya [0] adalah elemen pertama, [1] adalah elemen kedua, dst.
+
+Contoh
+Contoh ini menunjukkan cara mengakses elemen pertama dan ketiga dalam prices slice:
+
+(slices4.go)
+
+----------------------------------------------------------------------------------------
+
+Ubah Elemen dari Slice
+
+Anda juga dapat mengubah elemen slice tertentu dengan mengacu pada nomor indeks.
+
+Contoh
+Contoh ini menunjukkan cara mengubah elemen ketiga dalam prices slice:
+
+(slices4_2.go)
+
+----------------------------------------------------------------------------------------
+
+Tambahkan Elemen Ke Slice
+
+Anda dapat menambahkan elemen ke akhir slice menggunakan fungsi append() :
+
+Syntax
+slice_name = append(slice_name, element1, element2, ...)
+
+Catatan: Tanda '...' setelah slice2 diperlukan saat menambahkan elemen dari satu slice ke slice lainnya.
+
+Contoh
+Contoh ini menunjukkan cara menambahkan satu slice ke slice lain:
+
+(slices6.go)
+
+----------------------------------------------------------------------------------------
+
+Ubah Panjang Slice
+
+Tidak seperti array, panjang sebuah slice dimungkinkan untuk diubah.
+
+Contoh
+Contoh ini menunjukkan cara mengubah panjang slice:
+
+(slices7.go)
+
+----------------------------------------------------------------------------------------
+
+Efisiensi Memori
+
+Saat menggunakan slice, Go memuat semua elemen yang mendasarinya ke dalam memori.
+
+Jika array besar dan Anda hanya membutuhkan beberapa elemen, lebih baik menyalin elemen tersebut menggunakan fungsi copy().
+
+Fungsi copy() membuat array dasar baru dengan hanya elemen yang diperlukan untuk slice. Ini akan mengurangi memori yang digunakan untuk program.
+
+Syntax
+copy(dest, src)
+
+Fungsi copy() mengambil dua slice dest dan src, dan menyalin data dari src ke dest. Ini mengembalikan jumlah elemen yang disalin.
+
+Contoh
+Contoh ini menunjukkan cara menggunakan fungsi copy():
+
+(slices8.go)
+
+Kapasitas slice baru sekarang lebih kecil dari kapasitas slice asli karena array baru yang mendasarinya lebih kecil.

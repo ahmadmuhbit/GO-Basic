@@ -1,0 +1,59 @@
+Go For Loops
+
+Perulangan for loop melalui blok kode beberapa kali.
+Perulangan for adalah satu-satunya perulangan yang tersedia di Go.
+
+------------------------------------------------------------------------
+
+Go untuk Loop
+
+Loop berguna jika Anda ingin menjalankan kode yang sama berulang-ulang, setiap kali dengan nilai yang berbeda.
+Setiap eksekusi loop disebut iterasi.
+Perulangan for dapat memakan waktu hingga tiga pernyataan:
+
+Syntax
+
+for statement1; statement2; statement3 {
+   // code to be executed for each iteration
+}
+
+    - statement1 : Menginisialisasi nilai penghitung loop.
+    - statement2 : Dievaluasi untuk setiap iterasi loop. Jika bernilai TRUE, loop berlanjut. Jika bernilai FALSE, loop berakhir.
+    - statement3 : Meningkatkan nilai penghitung loop.
+
+Catatan: Pernyataan ini tidak perlu hadir sebagai argumen loop. Namun, mereka harus ada dalam kode dalam beberapa bentuk.
+
+------------------------------------------------------------------------
+
+Contoh Perulangan For
+
+Contoh 1
+Contoh ini akan mencetak angka dari 0 hingga 4:
+
+(for1.go)
+
+Contoh 1 dijelaskan
+    - i:=0; - Inisialisasi penghitung loop (i), dan atur nilai awal ke 0
+    - i < 5; - Lanjutkan loop selama i kurang dari 5
+    - i++ - Tingkatkan nilai penghitung loop sebesar 1 untuk setiap iterasi
+
+Contoh 2
+Contoh ini menghitung hingga 100 kali puluhan:
+
+(for5.go)
+
+Contoh 2 dijelaskan
+    - i:=0; - Inisialisasi penghitung loop (i), dan atur nilai awal ke 0
+    - i <= 100; - Lanjutkan loop selama i kurang dari atau sama dengan 100
+    - i+=10 - Tingkatkan nilai penghitung loop sebesar 10 untuk setiap iterasi
+
+------------------------------------------------------------------------
+
+The continue Statement
+
+Pernyataan continue digunakan untuk melewati satu atau lebih iterasi dalam perulangan. Kemudian dilanjutkan dengan iterasi berikutnya dalam loop.
+
+Contoh
+Contoh ini melewatkan nilai 3:
+
+(for2.go)

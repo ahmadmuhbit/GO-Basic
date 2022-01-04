@@ -1,0 +1,343 @@
+Go Output Functions
+
+Go memiliki tiga fungsi untuk menampilkan teks:
+    - Print()
+    - Println()
+    - Printf()
+
+-------------------------------------------------------------------------------------------
+
+The Print() Function
+
+Fungsi Print() mencetak argumennya dengan format defaultnya.
+
+Example (output1.go)
+
+Print the values of i and j:
+
+package main
+import ("fmt")
+
+func main() {
+  var i,j string = "Hello","World"
+
+  fmt.Print(i)
+  fmt.Print(j)
+}
+
+Result:
+HelloWorld
+
+Contoh (output2.go)
+Jika kita ingin mencetak argumen di baris baru, kita perlu menggunakan \n.
+
+package main
+import ("fmt")
+
+func main() {
+  var i,j string = "Hello","World"
+
+  fmt.Print(i, "\n")
+  fmt.Print(j, "\n")
+}
+
+Result:
+Hello
+World
+
+Tip: \n membuat baris baru.
+
+Contoh (output3.go)
+Dimungkinkan juga untuk hanya menggunakan satu Print() untuk mencetak banyak variabel.
+
+package main
+import ("fmt")
+
+func main() {
+  var i,j string = "Hello","World"
+
+  fmt.Print(i, "\n",j)
+}
+
+Result:
+Hello
+World
+
+
+Example (output4.go)
+Jika kita ingin menambahkan spasi di antara argumen string, kita perlu menggunakan " ":
+
+package main
+import ("fmt")
+
+func main() {
+  var i,j string = "Hello","World"
+
+  fmt.Print(i, " ", j)
+}
+
+Result:
+Hello World
+
+
+Print() menyisipkan spasi di antara argumen jika keduanya bukan string:
+
+Example (output5.go)
+
+package main
+import ("fmt")
+
+func main() {
+  var i,j = 10,20
+
+  fmt.Print(i,j)
+}
+
+Result:
+10 20
+
+-------------------------------------------------------------------------------------------
+
+The Println() Function
+
+Fungsi Println() mirip dengan Print() dengan perbedaan bahwa spasi ditambahkan di antara argumen, dan baris baru ditambahkan di akhir:
+
+Example (output6.go)
+
+package main
+import ("fmt")
+
+func main() {
+  var i,j string = "Hello","World"
+
+  fmt.Println(i,j)
+}
+
+Result:
+Hello World
+
+-------------------------------------------------------------------------------------------
+
+Fungsi Printf()
+
+Fungsi Printf() pertama-tama memformat argumennya berdasarkan kata kerja pemformatan yang diberikan dan kemudian mencetaknya.
+
+Di sini kita akan menggunakan dua kata kerja pemformatan:
+
+%v digunakan untuk mencetak nilai argumen
+%T digunakan untuk mencetak tipe argumen
+
+Example (output7.go)
+
+package main
+import ("fmt")
+
+func main() {
+  var i string = "Hello"
+  var j int = 15
+
+  fmt.Printf("i has value: %v and type: %T\n", i, i)
+  fmt.Printf("j has value: %v and type: %T", j, j)
+}
+
+Result:
+i has value: Hello and type: string
+j has value: 15 and type: int
+
+Tip: Lihat semua verba pemformatan di bab Go Formatting Verbs.
+
+-------------------------------------------------------------------------------------------
+
+Go Formatting Verbs
+
+Formatting Verbs for Printf()
+Go menawarkan beberapa verba pemformatan yang dapat digunakan dengan fungsi Printf().
+
+General Formatting Verbs / Kata Kerja Pemformatan Umum
+Kata kerja berikut dapat digunakan dengan semua tipe data:
+
+Verb	    Description
+ %v	      Mencetak nilai dalam format default
+ %#v	    Mencetak nilai dalam format Go-sintaks
+ %T	      Mencetak jenis nilainya
+ %%	      Mencetak tanda %
+
+Example (formatting1.go)
+
+package main
+import ("fmt")
+
+func main() {
+  var i = 15.5
+  var txt = "Hello World!"
+
+  fmt.Printf("%v\n", i)
+  fmt.Printf("%#v\n", i)
+  fmt.Printf("%v%%\n", i)
+  fmt.Printf("%T\n", i)
+
+  fmt.Printf("%v\n", txt)
+  fmt.Printf("%#v\n", txt)
+  fmt.Printf("%T\n", txt)
+}
+
+Result:
+15.5
+15.5
+15.5%
+float64
+Hello World!
+"Hello World!"
+string
+
+-------------------------------------------------------------------------------------------
+
+Integer Formatting Verbs
+
+Kata kerja berikut dapat digunakan dengan tipe data integer:
+
+Verb	    Description
+ %b	      Base 2 / Basis 2
+ %d	      Base 10 /Basis 10
+ %+d	    Base 10 and always show sign / Basis 10 dan selalu tunjukkan tanda
+ %o	      Base 8 / Basis 8
+ %O	      Base 8, with leading 0o / Basis 8, dengan awalan 0o
+ %x	      Base 16, lowercase / Basis 16, huruf kecil
+ %X	      Base 16, uppercase / Basis 16, huruf besar
+ %#x	    Base 16, with leading 0x / Basis 16, dengan 0x . di depan
+ %4d	    Pad with spaces (width 4, right justified) / Pad dengan spasi (lebar 4, rata kanan)
+ %-4d	    Pad with spaces (width 4, left justified) / Pad dengan spasi (lebar 4, rata kiri)
+ %04d	    Pad with zeroes (width 4) / Pad dengan nol (lebar 4)
+
+Example (formatting3.go)
+
+package main
+import ("fmt")
+
+func main() {
+  var i = 15
+ 
+  fmt.Printf("%b\n", i)
+  fmt.Printf("%d\n", i)
+  fmt.Printf("%+d\n", i)
+  fmt.Printf("%o\n", i)
+  fmt.Printf("%O\n", i)
+  fmt.Printf("%x\n", i)
+  fmt.Printf("%X\n", i)
+  fmt.Printf("%#x\n", i)
+  fmt.Printf("%4d\n", i)
+  fmt.Printf("%-4d\n", i)
+  fmt.Printf("%04d\n", i)
+}
+
+Result:
+1111
+15
++15
+17
+0o17
+f
+F
+0xf
+  15
+15
+0015
+
+-------------------------------------------------------------------------------------------
+
+String Formatting Verbs
+
+Kata kerja berikut dapat digunakan dengan tipe data string:
+
+Verb	    Description
+ %s	      Mencetak nilai sebagai string biasa
+ %q	      Mencetak nilai sebagai string yang dikutip ganda
+ %8s	    Mencetak nilai sebagai string biasa (lebar 8, rata kanan)
+ %-8s	    Mencetak nilai sebagai string biasa (lebar 8, rata kiri)
+ %x	      Mencetak nilai sebagai hex dump dari nilai byte
+ % x	    Mencetak nilai sebagai hex dump dengan spasi
+
+Example (formatting5.go)
+
+package main
+import ("fmt")
+
+func main() {
+  var txt = "Hello"
+ 
+  fmt.Printf("%s\n", txt)
+  fmt.Printf("%q\n", txt)
+  fmt.Printf("%8s\n", txt)
+  fmt.Printf("%-8s\n", txt)
+  fmt.Printf("%x\n", txt)
+  fmt.Printf("% x\n", txt)
+}
+
+Result:
+Hello
+"Hello"
+   Hello
+Hello
+48656c6c6f
+48 65 6c 6c 6f
+
+-------------------------------------------------------------------------------------------
+
+Boolean Formatting Verbs
+
+Kata kerja berikut dapat digunakan dengan tipe data boolean:
+
+Verb	    Description
+ %t	      Nilai operator boolean dalam format benar atau salah (sama seperti menggunakan %v)
+
+Example (formatting2.go)
+
+package main
+import ("fmt")
+
+func main() {
+  var i = true
+  var j = false
+
+  fmt.Printf("%t\n", i)
+  fmt.Printf("%t\n", j)
+}
+
+Result:
+true
+false
+
+-------------------------------------------------------------------------------------------
+
+Float Formatting Verbs
+
+Kata kerja berikut dapat digunakan dengan tipe data float:
+
+Verb	      Description
+ %e	        Notasi ilmiah dengan 'e' sebagai eksponen
+ %f      	  Titik desimal, tanpa eksponen
+ %.2f	      Lebar default, presisi 2
+ %6.2f	    Lebar 6, presisi 2
+ %g	        Eksponen sesuai kebutuhan, hanya angka yang diperlukan
+
+Example ()
+
+package main
+import ("fmt")
+
+func main() {
+  var i = 3.141
+
+  fmt.Printf("%e\n", i)
+  fmt.Printf("%f\n", i)
+  fmt.Printf("%.2f\n", i)
+  fmt.Printf("%6.2f\n", i)
+  fmt.Printf("%g\n", i)
+}
+
+Result:
+3.141000e+00
+3.141000
+3.14
+  3.14
+3.141

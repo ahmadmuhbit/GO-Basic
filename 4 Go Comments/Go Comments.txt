@@ -1,0 +1,78 @@
+Go Comments
+
+----------------------------------------------------------------------------------------------------
+
+Go Comments
+
+Komentar adalah teks yang diabaikan saat dieksekusi.
+Komentar dapat digunakan untuk menjelaskan kode, dan membuatnya lebih mudah dibaca.
+Komentar juga dapat digunakan untuk mencegah eksekusi kode saat menguji kode alternatif.
+Go mendukung komentar satu baris atau multi-baris.
+
+----------------------------------------------------------------------------------------------------
+
+Go Single-line Comments
+
+Komentar satu baris dimulai dengan dua garis miring (//).
+Teks apa pun antara // dan akhir baris diabaikan oleh kompiler (tidak akan dieksekusi).
+
+Example (demo_helloworld4.go)
+
+// This is a comment
+package main
+import ("fmt")
+
+func main() {
+  // This is a comment
+  fmt.Println("Hello World!")
+}
+
+Contoh berikut menggunakan komentar satu baris di akhir baris kode:
+
+Example
+
+package main
+import ("fmt")
+
+func main() {
+  fmt.Println("Hello World!") // This is a comment
+}
+
+----------------------------------------------------------------------------------------------------
+
+Go Multi-line Comments
+
+Komentar multi-baris dimulai dengan /* dan diakhiri dengan */.
+
+Setiap teks antara /* dan */ akan diabaikan oleh compiler:
+
+Example (demo_helloworld6.go)
+
+package main
+import ("fmt")
+
+func main() {
+  /* The code below will print Hello World
+  to the screen, and it is amazing */
+  fmt.Println("Hello World!")
+}
+
+Tip: Terserah Anda ingin menggunakan yang mana. Biasanya, kita menggunakan // untuk komentar pendek, dan /* */ untuk komentar yang lebih panjang.
+
+----------------------------------------------------------------------------------------------------
+
+Komentar untuk Mencegah Eksekusi Kode
+
+Anda juga dapat menggunakan komentar untuk mencegah kode dieksekusi.
+Kode yang dikomentari dapat disimpan untuk referensi dan pemecahan masalah nanti.
+
+Example (demo_helloworld7.go)
+
+package main
+import ("fmt")
+
+func main() {
+  fmt.Println("Hello World!")
+  // fmt.Println("This line does not execute")
+}
+

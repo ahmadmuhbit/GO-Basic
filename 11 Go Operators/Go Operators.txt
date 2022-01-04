@@ -1,0 +1,120 @@
+Go Operators
+
+----------------------------------------------------------------------------------------
+
+Go Operator
+
+Operator digunakan untuk melakukan operasi pada variabel dan nilai.
+Operator + menjumlahkan dua nilai, seperti pada contoh di bawah ini:
+
+(oper.go)
+
+Meskipun + operator sering digunakan untuk menjumlahkan dua nilai, itu juga dapat digunakan untuk menjumlahkan variabel dan nilai, atau variabel dan variabel lain:
+
+(oper2.go)
+
+----------------------------------------------------------------------------------------
+
+Go Arithmetic Operators
+
+Operator Aritmatika
+Operator aritmatika digunakan untuk melakukan operasi matematika umum.
+
+Operator	Name	        Description	                            Example	    Try it
++	        Addition	    Adds together two values	            x + y	    oper_add.go
+-	        Subtraction	    Subtracts one value from another	    x - y       oper_sub.go	
+*	        Multiplication	Multiplies two values	                x * y	    oper_mult.go
+/	        Division	    Divides one value by another	        x / y	    oper_div.go
+%	        Modulus	        Returns the division remainder	        x % y	    oper_mod.go
+++	        Increment	    Increases the value of a variable by 1	x++	        oper_inc.go
+--	        Decrement	    Decreases the value of a variable by 1	x--         oper_dec.go
+
+----------------------------------------------------------------------------------------
+
+Go Assignment Operators
+
+Operator Penugasan
+
+Operator penugasan digunakan untuk menetapkan nilai ke variabel.
+Pada contoh di bawah, kita menggunakan operator penugasan (=) untuk menetapkan nilai 10 ke variabel yang disebut x:
+
+(oper_assignment1.go)
+
+Operator penugasan tambahan (+=) menambahkan nilai ke variabel:
+
+(oper_assignment2.go)
+
+Daftar semua operator penugasan:
+
+Operator	Example	        Same As	            Try it
+=	        x = 5	        x = 5	            oper_assignment1.go   
++=	        x += 3	        x = x + 3           oper_assignment2.go	
+-=	        x -= 3	        x = x - 3           oper_ass3.go	
+*=	        x *= 3	        x = x * 3           oper_ass4.go	    
+/=	        x /= 3	        x = x / 3           oper_ass5.go	
+%=	        x %= 3	        x = x % 3           oper_ass6.go	
+&=	        x &= 3	        x = x & 3	
+|=	        x |= 3	        x = x | 3	
+^=	        x ^= 3	        x = x ^ 3	
+>>=	        x >>= 3	        x = x >> 3	
+<<=	        x <<= 3	        x = x << 3
+
+----------------------------------------------------------------------------------------
+
+Go Comparison Operators
+
+Operator Perbandingan
+
+Operator perbandingan digunakan untuk membandingkan dua nilai.
+Catatan: Nilai kembalian dari suatu perbandingan adalah benar (1) atau salah (0).
+
+Dalam contoh berikut, kami menggunakan operator lebih besar dari (>) untuk mengetahui apakah 5 lebih besar dari 3:
+
+Contoh (oper_assignment3.go)
+
+Daftar semua operator perbandingan:
+
+Operator	Name	                    Example	        Try it
+==	        Equal to	                x == y          oper_compare1.go	
+!=	        Not equal	                x != y          oper_compare2.go	
+>	        Greater than	            x > y           oper_compare3.go	
+<	        Less than	                x < y           oper_compare4.go	
+>=	        Greater than or equal to	x >= y          oper_compare5.go	
+<=	        Less than or equal to	    x <= y          oper_compare6.go
+
+Anda akan mempelajari lebih lanjut tentang operator perbandingan dan cara menggunakannya di bab Go Conditions.
+
+----------------------------------------------------------------------------------------
+
+Go Logical Operators
+
+Operator Logika
+
+Operator logika digunakan untuk menentukan logika antar variabel atau nilai:
+
+Opr Name	      Description	                                            Example	             
+&& 	Logical and  Mengembalikan nilai true jika kedua pernyataan benar      x < 5 &&  x < 10	
+|| 	Logical or	 Mengembalikan nilai true jika salah satu pernyataan benar	x < 5 || x < 4	
+!	Logical not  Membalikkan hasilnya, mengembalikan false jika hasilnya benar!(x < 5 && x < 10)
+
+oper_logical1.go
+oper_logical2.go
+oper_logical3.go
+
+----------------------------------------------------------------------------------------
+
+Go Bitwise Operators
+
+Operator Bitwise
+Operator bitwise digunakan pada angka (biner):
+
+Operator	Name	             Description	                                 Example
+& 	        AND	                 Sets each bit to 1 if both bits are 1  	     x & y	
+|	        OR	                 Sets each bit to 1 if one of two bits is 1	     x | y	
+ ^	        XOR	                 Sets each bit to 1 if only one of two bits is 1 x ^ b	
+<<	        Zero fill left shift Shift left by pushing zeros in from the right	 x << 2	
+>>	        Signed right shift	 Shift right by pushing copies of the leftmost   x << 2
+                                 bit in from the left, and let the rightmost 
+                                 bits fall off	
+
+	

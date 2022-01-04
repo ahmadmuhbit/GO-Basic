@@ -1,0 +1,55 @@
+Go Syntax
+
+Go Sintaks
+
+File Go terdiri dari bagian-bagian berikut:
+    - Deklarasi paket / Package declaration
+    - paket impor / Import packages
+    - Fungsi / Functions
+    - Pernyataan dan ekspresi / Statements and expressions
+
+Perhatikan kode berikut, untuk lebih memahaminya:
+
+package main
+import ("fmt")
+
+func main() {
+  fmt.Println("Hello World!")
+}
+
+Contoh dijelaskan
+
+    - Baris 1: Di Go, setiap program adalah bagian dari sebuah paket. Kami mendefinisikan ini menggunakan kata kunci paket (package). Dalam contoh ini, program termasuk dalam paket utama (main package).
+    - Baris 2: import ("fmt") memungkinkan kita mengimpor file yang disertakan dalam paket fmt.
+    - Baris 3: Baris kosong. Pergi mengabaikan ruang putih. Memiliki spasi putih dalam kode membuatnya lebih mudah dibaca.
+    - Baris 4: func main() {} adalah sebuah fungsi. Kode apa pun di dalam tanda kurung kurawalnya {} akan dieksekusi.
+    - Baris 5: fmt.Println() adalah fungsi yang tersedia dari paket fmt. Digunakan untuk menampilkan/mencetak teks. Dalam contoh kita ini akan menampilkan "Hello World!".
+
+Catatan: Di Go, semua kode yang dapat dieksekusi milik paket utama.
+
+-------------------------------------------------------------------------------------------------
+
+Go Statements
+
+fmt.Println("Hello World!") adalah sebuah pernyataan / statement.
+Di Go, statement dipisahkan dengan mengakhiri baris (menekan tombol Enter) atau dengan titik koma ";".
+Menekan tombol Enter menambahkan ";" ke akhir baris secara implisit (tidak muncul dalam kode sumber).
+Tanda kurung kurawal kiri { tidak boleh berada di awal baris.
+
+Jalankan kode berikut dan lihat apa yang terjadi:
+
+package main
+import ("fmt")
+
+func main()
+{
+  fmt.Println("Hello World!")
+}
+
+-------------------------------------------------------------------------------------------------
+
+Go Compact Code / Pergi Kode Ringkas
+
+Anda dapat menulis kode yang lebih ringkas, seperti yang ditunjukkan di bawah ini (ini tidak disarankan karena membuat kode lebih sulit dibaca):
+
+package main; import ("fmt"); func main() { fmt.Println("Hello World!");}

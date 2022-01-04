@@ -1,0 +1,29 @@
+Go Introduction
+
+Apa itu Go?
+
+    - Go adalah bahasa pemrograman sumber terbuka lintas platform
+    - Go dapat digunakan untuk membuat aplikasi berkinerja tinggi
+    - Go adalah bahasa yang cepat, diketik secara statis, dan dikompilasi yang terasa seperti bahasa yang diketik secara dinamis dan ditafsirkan
+    - Go dikembangkan di Google oleh Robert Griesemer, Rob Pike, dan Ken Thompson pada tahun 2007
+    - Sintaks Go mirip dengan C++
+
+Untuk Apa Go Digunakan?
+
+    - Pengembangan web (sisi server)
+    - Mengembangkan program berbasis jaringan
+    - Mengembangkan aplikasi perusahaan lintas platform
+    - Pengembangan cloud-asli
+
+Mengapa Menggunakan Go?
+    - Go itu menyenangkan dan mudah dipelajari
+    - Go memiliki waktu berjalan dan waktu kompilasi yang cepat
+    - Go mendukung konkurensi
+    - Go memiliki manajemen memori
+    - Go berfungsi di berbagai platform (Windows, Mac, Linux, Raspberry Pi, dll.)
+
+Catatan:
+
+    - Waktu kompilasi mengacu pada menerjemahkan kode ke dalam program yang dapat dieksekusi
+    - Concurrency melakukan banyak hal yang tidak sesuai urutan, atau pada saat yang sama, tanpa mempengaruhi hasil akhir
+    - Diketik secara statis berarti tipe variabel diketahui pada waktu kompilasi

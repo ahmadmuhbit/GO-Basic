@@ -1,0 +1,122 @@
+Go Constants
+
+Jika variabel harus memiliki nilai tetap yang tidak dapat diubah, Anda dapat menggunakan kata kunci const.
+Kata kunci const mendeklarasikan variabel sebagai "konstan", yang berarti variabel tersebut tidak dapat diubah dan hanya-baca.
+
+Syntax
+const CONSTNAME type = value
+
+Catatan: Nilai konstanta harus ditetapkan saat Anda mendeklarasikannya.
+
+----------------------------------------------------------------------------------------------------
+
+Declaring a Constant / Mendeklarasikan Konstanta
+
+Berikut adalah contoh mendeklarasikan konstanta di Go:
+
+Example (variable_constants.go)
+
+package main
+import ("fmt")
+
+const PI = 3.14
+
+func main() {
+  fmt.Println(PI)
+}
+
+----------------------------------------------------------------------------------------------------
+
+Aturan Konstan
+
+    - Nama konstan mengikuti aturan penamaan yang sama dengan variabel
+    - Nama konstanta biasanya ditulis dengan huruf besar (untuk memudahkan identifikasi dan diferensiasi dari variabel)
+    - Konstanta dapat dideklarasikan baik di dalam maupun di luar suatu fungsi
+
+----------------------------------------------------------------------------------------------------
+
+Tipe Konstan
+
+Ada dua jenis konstanta:
+    - Typed constants / Konstanta yang diketik
+    - Untyped constants / Konstanta yang tidak diketik
+
+----------------------------------------------------------------------------------------------------
+
+Typed constants / Konstanta yang Diketik
+
+Konstanta yang diketik dideklarasikan dengan tipe yang ditentukan:
+
+Example(variable_constants1.go)
+
+package main
+import ("fmt")
+
+const A int = 1
+
+func main() {
+  fmt.Println(A)
+}
+
+----------------------------------------------------------------------------------------------------
+
+Untyped Constants / Konstanta Tidak Diketik
+
+Konstanta yang tidak diketik dideklarasikan tanpa tipe:
+
+Example (variable_constants2.go)
+
+package main
+import ("fmt")
+
+const A = 1
+
+func main() {
+  fmt.Println(A)
+}
+
+Catatan: Dalam hal ini, jenis konstanta disimpulkan dari nilainya (berarti kompiler memutuskan jenis konstanta, berdasarkan nilainya).
+
+----------------------------------------------------------------------------------------------------
+
+Konstanta: Tidak dapat diubah dan hanya-baca (Constants: Unchangeable and Read-only)
+
+Ketika sebuah konstanta dideklarasikan, tidak mungkin untuk mengubah nilainya nanti:
+
+Example (variable_constants3.go)
+
+package main
+import ("fmt")
+
+func main() {
+  const A = 1
+  A = 2
+  fmt.Println(A)
+}
+
+Result:
+./prog.go:8:7: cannot assign to A
+
+----------------------------------------------------------------------------------------------------
+
+Deklarasi Beberapa Konstanta
+
+Beberapa konstanta dapat dikelompokkan menjadi satu blok agar mudah dibaca:
+
+Example (variable_constants4.go)
+
+package main
+import ("fmt")
+
+const (
+  A int = 1
+  B = 3.14
+  C = "Hi!"
+)
+
+func main() {
+  fmt.Println(A)
+  fmt.Println(B)
+  fmt.Println(C)
+}
+

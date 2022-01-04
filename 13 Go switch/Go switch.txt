@@ -1,0 +1,81 @@
+Go switch Statement
+
+Pernyataan switch
+
+Gunakan pernyataan switch untuk memilih salah satu dari banyak blok kode yang akan dieksekusi.
+Pernyataan switch di Go mirip dengan yang ada di C, C++, Java, JavaScript, dan PHP. Perbedaannya adalah ia hanya menjalankan kasus yang cocok sehingga tidak memerlukan pernyataan break.
+
+--------------------------------------------------------------------------------------
+
+Single-Case switch Syntax
+
+Syntax
+
+switch expression {
+case x:
+   // code block
+case y:
+   // code block
+case z:
+...
+default:
+   // code block
+}
+
+Begini Cara kerjanya:
+
+    - Ekspresi dievaluasi sekali
+    - Nilai ekspresi switch dibandingkan dengan nilai setiap kasus
+    - Jika ada kecocokan, blok kode yang terkait akan dieksekusi
+    - Kata kunci default adalah opsional. Ini menentukan beberapa kode untuk dijalankan jika tidak ada kasus yang cocok
+
+--------------------------------------------------------------------------------------
+
+Contoh Switch Kasus Tunggal
+
+Contoh di bawah ini menggunakan nomor hari kerja untuk menghitung nama hari kerja:
+
+(switch1.go)
+
+--------------------------------------------------------------------------------------
+
+Kata Kunci default
+
+Kata kunci default menentukan beberapa kode untuk dijalankan jika tidak ada kasus yang cocok:
+
+Contoh: (switch2.go)
+
+--------------------------------------------------------------------------------------
+
+Semua nilai case harus memiliki tipe yang sama dengan ekspresi switch. Jika tidak, kompiler akan memunculkan kesalahan:
+
+(switch5.go)
+
+Result:
+./prog.go:11:2: cannot use "b" (type untyped string) as type int
+
+--------------------------------------------------------------------------------------
+
+Go Multi-case switch Statement
+
+Pernyataan switch multi-kasus
+
+Dimungkinkan untuk memiliki beberapa nilai untuk setiap kasus dalam pernyataan switch:
+
+switch expression {
+case x,y:
+   // code block if expression is evaluated to x or y
+case v,w:
+   // code block if expression is evaluated to v or w
+case z:
+...
+default:
+   // code block if expression is not found in any cases
+}
+
+--------------------------------------------------------------------------------------
+
+Contoh switch multi-kasus
+Contoh di bawah ini menggunakan nomor hari kerja untuk mengembalikan teks yang berbeda:
+
+(switch6.go)

@@ -1,0 +1,161 @@
+Go Conditions
+
+Go Kondisi
+
+Suatu kondisi dapat bernilai benar atau salah.
+
+Go mendukung operator perbandingan biasa dari matematika:
+
+    - Kurang dari <
+    - Kurang dari atau sama dengan <=
+    - Lebih besar dari >
+    - Lebih besar dari atau sama >=
+    - Sama dengan ==
+    - Tidak sama dengan !=
+
+Selain itu, Go mendukung operator logika biasa:
+
+    - Logical AND &&
+    - Logical OR ||
+    - Logical NOT !
+
+Anda dapat menggunakan operator ini atau kombinasinya untuk membuat kondisi untuk keputusan yang berbeda.
+
+Example	                Try it
+x > y	                conditions1.go
+x != y                  conditions2.go	
+(x > y) && (y > z)      conditions3.go    	
+(x == y) || z           conditions4.go
+
+Go memiliki pernyataan bersyarat berikut:
+
+    - Gunakan if untuk menentukan blok kode yang akan dieksekusi, jika kondisi yang ditentukan benar
+    - Gunakan else untuk menentukan blok kode yang akan dieksekusi, jika kondisi yang sama salah
+    - Gunakan else if untuk menentukan kondisi baru yang akan diuji, jika kondisi pertama salah
+    - Gunakan switch untuk menentukan banyak blok kode alternatif yang akan dieksekusi
+
+-------------------------------------------------------------------------------------------
+
+Go if statement
+
+Pernyataan if
+
+Gunakan pernyataan if untuk menentukan blok kode Go yang akan dieksekusi jika suatu kondisi benar.
+
+Syntax
+
+if condition {
+  // code to be executed if condition is true
+}
+
+Perhatikan bahwa if dalam huruf kecil. Huruf besar (If atau IF) akan menghasilkan kesalahan.
+
+Pada contoh di bawah, kami menguji dua nilai untuk mengetahui apakah 20 lebih besar dari 18. Jika kondisinya benar, cetak beberapa teks:
+
+(if1.go)
+
+Kita juga dapat menguji variabel:
+
+(if2.go)
+
+Contoh dijelaskan
+Pada contoh di atas kita menggunakan dua variabel, x dan y, untuk menguji apakah x lebih besar dari y (menggunakan operator >). Karena x adalah 20, dan y adalah 18, dan kita tahu bahwa 20 lebih besar dari 18, kita mencetak ke layar bahwa "x lebih besar dari y".
+
+-------------------------------------------------------------------------------------------
+
+Go if else Statement
+
+The else Statement
+
+Gunakan pernyataan else untuk menentukan blok kode yang akan dieksekusi jika kondisinya salah.
+
+Syntax
+
+if condition {
+  // code to be executed if condition is true
+} else {
+  // code to be executed if condition is false
+}
+
+Using The if else Statement
+
+Contoh
+Dalam contoh ini, waktu (20) lebih besar dari 18, sehingga kondisi if salah. Karena itu, kami beralih ke kondisi lain dan mencetak ke layar "Good evening". Jika waktunya kurang dari 18, program akan mencetak "Good day":
+
+(if_else1.go)
+
+Contoh
+Dalam contoh ini, suhunya adalah 14 sehingga kondisi if salah sehingga baris kode di dalam pernyataan else dijalankan:
+
+(if_else2.go)
+
+Tanda kurung dalam pernyataan else harus seperti } else {:
+
+Contoh
+Memiliki tanda kurung lain di baris yang berbeda akan menimbulkan kesalahan (error):
+
+(if_else3.go)
+
+Result:
+./prog.go:9:3: syntax error: unexpected else, expecting }
+
+-------------------------------------------------------------------------------------------
+
+Go else if Statement
+
+The else if Statement
+Gunakan pernyataan else if untuk menentukan kondisi baru jika kondisi pertama salah.
+
+Syntax
+
+if condition1 {
+   // code to be executed if condition1 is true
+} else if condition2 {
+   // code to be executed if condition1 is false and condition2 is true
+} else {
+   // code to be executed if condition1 and condition2 are both false
+}
+
+Menggunakan Pernyataan else if
+
+Contoh
+Contoh ini menunjukkan cara menggunakan pernyataan if else.
+
+(elseif1.go)
+
+Contoh dijelaskan
+Pada contoh di atas, waktu (22) lebih besar dari 10, sehingga kondisi pertama salah. Kondisi berikutnya, dalam pernyataan if else, juga salah, jadi kita beralih ke kondisi lain karena kondisi1 dan kondisi2 keduanya salah - dan mencetak ke layar "Good evening".
+
+Namun, jika waktunya 14, program kami akan mencetak "Good day."
+
+Contoh
+Contoh lain untuk penggunaan else if.
+
+(elseif2.go)
+
+Contoh
+Jika condition1 dan condition2 keduanya benar, hanya kode untuk condition1 yang dieksekusi:
+
+(elseif3.go)
+
+-------------------------------------------------------------------------------------------
+
+Go Nested if Statement
+
+Pernyataan if Bersarang
+
+Anda dapat memiliki pernyataan if di dalam pernyataan if, ini disebut if bersarang.
+
+Syntax
+
+if condition1 {
+   // code to be executed if condition1 is true
+  if condition2 {
+     // code to be executed if both condition1 and condition2 are true
+  }
+}
+
+Contoh
+Contoh ini menunjukkan cara menggunakan pernyataan if bersarang:
+
+(nestedif1.go)

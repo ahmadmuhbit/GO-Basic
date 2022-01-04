@@ -1,0 +1,112 @@
+Go Arrays
+
+Array digunakan untuk menyimpan beberapa nilai dari tipe yang sama dalam satu variabel, daripada mendeklarasikan variabel terpisah untuk setiap nilai.
+
+----------------------------------------------------------------------------------------
+
+Mendeklarasikan Array
+
+Di Go, ada dua cara untuk mendeklarasikan array:
+
+1. Dengan kata kunci var:
+
+Syntax
+
+var array_name = [length]datatype{values} // here length is defined
+
+or
+
+var array_name = [...]datatype{values} // here length is inferred
+
+2. Dengan tanda :=
+
+Syntax
+
+array_name := [length]datatype{values} // here length is defined
+
+or
+
+array_name := [...]datatype{values} // here length is inferred
+
+Catatan: Panjangnya menentukan jumlah elemen yang akan disimpan dalam array. Di Go, array memiliki panjang yang tetap. Panjang array ditentukan oleh angka atau disimpulkan (berarti bahwa kompiler memutuskan panjang array, berdasarkan jumlah nilai).
+
+----------------------------------------------------------------------------------------
+
+Contoh Array
+
+Contoh
+Contoh ini mendeklarasikan dua array (arr1 dan arr2) dengan panjang yang ditentukan:
+
+(arrays1.go)
+
+------------------------
+
+Contoh
+Contoh ini mendeklarasikan dua array (arr1 dan arr2) dengan panjang yang disimpulkan:
+
+(arrays2.go)
+
+------------------------
+
+Example
+Contoh ini mendeklarasikan array string:
+
+(arrays_string.go)
+
+----------------------------------------------------------------------------------------
+
+Akses Elemen Array
+
+Anda dapat mengakses elemen array tertentu dengan mengacu pada nomor indeks.
+Di Go, indeks array dimulai dari 0. Artinya [0] adalah elemen pertama, [1] adalah elemen kedua, dst.
+
+Contoh
+Contoh ini menunjukkan cara mengakses elemen pertama dan ketiga dalam prices array:
+
+(arrays3.go)
+
+----------------------------------------------------------------------------------------
+
+Ubah Elemen Array
+
+Anda juga dapat mengubah nilai elemen array tertentu dengan mengacu pada nomor indeks.
+
+Contoh
+Contoh ini menunjukkan cara mengubah nilai elemen ketiga dalam prices array:
+
+(arrays4.go)
+
+----------------------------------------------------------------------------------------
+
+Inisialisasi Array
+
+Jika sebuah array atau salah satu elemennya belum diinisialisasi dalam kode, maka akan diberikan nilai default dari tipenya.
+
+Tip: Nilai default untuk int adalah 0, dan nilai default untuk string adalah "".
+
+Contoh : (arrays5.go)
+
+----------------------------------------------------------------------------------------
+
+Inisialisasi Hanya Elemen Tertentu
+
+Dimungkinkan untuk menginisialisasi hanya elemen tertentu dalam array.
+
+Contoh
+Contoh ini hanya menginisialisasi elemen kedua dan ketiga dari array:
+
+(arrays6.go)
+
+contoh Dijelaskan
+Array contoh di atas memiliki 5 elemen.
+
+1:10 berarti: menetapkan 10 ke indeks array 1 (elemen kedua).
+2:40 berarti: menetapkan 40 ke indeks array 2 (elemen ketiga).
+
+----------------------------------------------------------------------------------------
+
+Temukan Panjang Array
+
+Fungsi len() digunakan untuk mencari panjang array:
+
+Contoh : (arrays7.go)
