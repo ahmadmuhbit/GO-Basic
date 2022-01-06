@@ -1,0 +1,169 @@
+Go Maps
+
+Go Maps
+
+Maps digunakan untuk menyimpan nilai data dalam pasangan key:value.
+Setiap elemen dalam maps adalah pasangan key:value.
+Map adalah koleksi yang tidak berurutan dan dapat diubah yang tidak memungkinkan duplikat.
+Panjang map adalah jumlah elemennya. Anda dapat menemukannya menggunakan fungsi len() .
+Nilai default map adalah nihil.
+Map menyimpan referensi ke tabel hash yang mendasarinya.
+Go memiliki banyak cara untuk membuat map.
+
+---------------------------------------------------------------------
+
+Membuat Maps Menggunakan var dan :=
+
+Syntax
+var a = map[KeyType]ValueType{key1:value1, key2:value2,...}
+b := map[KeyType]ValueType{key1:value1, key2:value2,...}
+
+Contoh
+Contoh ini menunjukkan cara membuat maps di Go. Perhatikan urutan kode dan outputnya
+
+(maps1.go)
+
+Catatan: Urutan elemen map yang didefinisikan dalam kode berbeda dari cara penyimpanannya. Data disimpan dengan cara yang efisien pengambilan data dari map.
+
+---------------------------------------------------------------------
+
+Membuat Maps Menggunakan Menggunakan make()Function:
+
+Syntax
+
+var a = make(map[KeyType]ValueType)
+b := make(map[KeyType]ValueType)
+
+Contoh
+Contoh ini menunjukkan cara membuat maps di Go menggunakan make()function.
+
+(maps2.go)
+
+---------------------------------------------------------------------
+
+Membuat Map Kosong
+
+Ada dua cara untuk membuat map kosong. Salah satunya adalah dengan menggunakan fungsi make() dan yang lainnya adalah dengan menggunakan sintaks berikut.
+
+Syntax
+
+var a map[KeyType]ValueType
+
+Catatan: Fungsi make() adalah cara yang tepat untuk membuat map kosong. Jika Anda membuat map kosong dengan cara yang berbeda dan menulisnya, itu akan menyebabkan kepanikan runtime.
+
+Contoh
+Contoh ini menunjukkan perbedaan antara mendeklarasikan map kosong menggunakan fungsi make() dan tanpanya.
+
+(maps3.go)
+
+---------------------------------------------------------------------
+
+Allowed Key Types / Jenis Kunci yang Diizinkan
+
+Kunci map dapat berupa tipe data apa pun yang operator kesetaraannya (==) didefinisikan. Ini termasuk:
+
+    - Booleans
+    - Numbers
+    - Strings
+    - Arrays
+    - Pointers
+    - Structs
+    - Interfaces (as long as the dynamic type supports equality)
+
+Jenis kunci yang tidak valid adalah:
+
+    - Slices
+    - Maps
+    - Functions
+
+Jenis ini tidak valid karena operator kesetaraan (==) tidak ditentukan untuknya.
+
+---------------------------------------------------------------------
+
+Jenis Value yang Diizinkan
+
+Nilai map dapat berupa tipe apa saja.
+
+---------------------------------------------------------------------
+
+Mengakses Elemen Map
+
+Anda dapat mengakses elemen map dengan:
+
+Syntax
+
+value = map_name[key]
+
+Contoh: (maps4.go)
+
+---------------------------------------------------------------------
+
+Memperbarui dan Menambahkan Elemen Map
+
+Memperbarui atau menambahkan elemen dilakukan dengan:
+
+Syntax
+map_name[key] = value
+
+Contoh
+Contoh ini menunjukkan cara memperbarui dan menambahkan elemen ke map.
+
+(maps5.go)
+
+---------------------------------------------------------------------
+
+Hapus Elemen dari Map
+
+Menghapus elemen dilakukan dengan menggunakan fungsi delete().
+
+Syntax
+delete(map_name, key)
+
+Contoh: (maps6.go)
+
+---------------------------------------------------------------------
+
+Periksa Elemen Tertentu di Map
+
+Anda dapat memeriksa apakah ada kunci tertentu di map menggunakan:
+
+Syntax
+val, ok :=map_name[key]
+
+Jika Anda hanya ingin memeriksa keberadaan kunci tertentu, Anda dapat menggunakan pengenal kosong (_) sebagai pengganti val.
+
+Contoh: (maps7.go)
+
+Contoh Dijelaskan
+
+Dalam contoh ini, kami memeriksa keberadaan kunci yang berbeda di map.
+Kunci "color" tidak ada di peta. Jadi nilainya adalah string kosong ('').
+Variabel ok2 digunakan untuk mengetahui apakah kunci tersebut ada atau tidak. Karena kita akan mendapatkan nilai yang sama jika nilai kunci "color" kosong. Ini adalah kasus untuk val3.
+
+---------------------------------------------------------------------
+
+Maps Adalah Referensi
+
+Maps adalah referensi ke tabel hash.
+Jika dua variabel map merujuk ke tabel hash yang sama, mengubah konten dari satu variabel akan mempengaruhi konten yang lain.
+
+Contoh: (maps8.go)
+
+---------------------------------------------------------------------
+
+Iterating Over Maps
+
+Anda dapat menggunakan range untuk beralih di atas maps.
+
+Contoh
+Contoh ini menunjukkan cara mengulangi elemen dalam map. Perhatikan urutan elemen dalam output.
+
+(maps9.go)
+
+---------------------------------------------------------------------
+
+Ulangi Maps dalam Urutan Tertentu
+
+Maps adalah struktur data yang tidak berurutan. Jika Anda perlu mengulangi map dalam urutan tertentu, Anda harus memiliki struktur data terpisah yang menentukan urutan itu.
+
+Contoh: ()

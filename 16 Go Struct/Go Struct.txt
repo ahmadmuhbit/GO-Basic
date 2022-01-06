@@ -1,0 +1,51 @@
+Go Struct
+
+Go Struktur
+
+Sebuah struct (kependekan dari struktur) digunakan untuk membuat kumpulan anggota dari tipe data yang berbeda, menjadi satu variabel.
+
+Sementara array digunakan untuk menyimpan beberapa nilai dari tipe data yang sama ke dalam satu variabel, struct digunakan untuk menyimpan beberapa nilai dari tipe data yang berbeda ke dalam satu variabel.
+
+Sebuah struct dapat berguna untuk mengelompokkan data bersama-sama untuk membuat record.
+
+-----------------------------------------------------------------------------------
+
+Mendeklarasikan Struktur
+
+Untuk mendeklarasikan struktur di Go, gunakan kata kunci type dan struct:
+
+Syntax
+
+type struct_name struct {
+  member1 datatype;
+  member2 datatype;
+  member3 datatype;
+  ...
+}
+
+Contoh
+Di sini kita mendeklarasikan tipe struct Person dengan anggota sebagai berikut: name, age, job dan salary :
+
+type Person struct {
+  name string
+  age int
+  job string
+  salary int
+}
+
+Tip: Perhatikan bahwa anggota struct di atas memiliki tipe data yang berbeda. name dan job bertipe string, sedangkan age dan salary bertipe int.
+
+-----------------------------------------------------------------------------------
+
+Access Struct Members / Akses Anggota Struktur
+
+Untuk mengakses setiap anggota struktur, gunakan operator titik (.) di antara nama variabel struktur dan anggota struktur:
+
+Example: (struct1.go)
+
+-----------------------------------------------------------------------------------
+
+Pass Struct as Function Arguments / Lewati Struct sebagai Argumen Fungsi
+Anda juga dapat meneruskan struktur sebagai argumen fungsi, seperti ini:
+
+Contoh: (struct3.go)
